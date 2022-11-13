@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do IMC</title>
+</head>
+
+<body>
+    <h1>Cálculo do IMC</h1>
+
+
+    <label for="idALT">Altura</label>
+    <input type="text" id="idALT">
+    <br>
+
+    <label for="idPESO">Peso</label>
+    <input type="text" id="idPESO">
+    <br>
+
+    <button onclick="calcular()">Calcular</button>
+
+
+
+    <p>Imc: <span id="imc"></span></p>
+
+    <script>
+        function calcular() {
+
+            let altura = parseFloat(document.getElementById("idALT").value);
+            let peso = parseFloat(document.getElementById("idPESO").value);
+
+
+
+
+
+            let imc = peso / altura ** 2;
+
+
+            if (peso <= 0.0 || altura <= 0.0) {
+                alert('digite um peso e altura válidos');
+
+            } else if (imc < 17) {
+                mens = 'Muito abaixo do peso';
+                cor = 'red';
+            } else if (imc >= 17 && imc < 18.49) {
+                mens = 'Abaixo do peso';
+                cor = 'orange';
+            } else if (imc >= 18.50 && imc <= 24.99) {
+                mens = 'Peso normal';
+                cor = 'green';
+            } else if (imc >= 25.0 && imc <= 29.99) {
+                mens = 'Sobrepeso';
+                cor = 'orange';
+            } else if (imc >= 30.0 && imc <= 35.99) {
+                mens = 'Obesidade 1';
+                cor = 'red';
+            } else if (imc >= 35.0 && imc <= 39.99) {
+                mens = 'Obesidade 2';
+                cor = 'red';
+            } else if (imc > 40.0) {
+                mens = 'Obesidade 3';
+                cor = 'red';
+            }
+
+
+
+            document.getElementById("imc").innerHTML = mens;
+            document.getElementById("imc").style.color = cor;
+
+
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

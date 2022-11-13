@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da média</title>
+</head>
+
+<body>
+    <h1>Cálculo da média</h1>
+
+    <p id="situacao"></p>
+    <p id="media"></p>
+
+    <script>
+
+        let n1 = parseFloat(prompt("digite a primeira nota: "));
+        let n2 = parseFloat(prompt("digite a segunda nota: "));
+
+        media = (n1 + n2) / 2
+
+        if (media >= 6.0) {
+            situacao = 'Aprovado';
+            cor = 'blue';
+        } else {
+            situacao = 'Reprovado';
+            cor = 'red';
+        }
+
+
+        document.getElementById("situacao").innerHTML = situacao;
+        document.getElementById("media").innerHTML = 'Sua média foi: ' + media;
+        document.getElementById("situacao").style.color = cor;
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
